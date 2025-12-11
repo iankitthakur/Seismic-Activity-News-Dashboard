@@ -99,7 +99,3 @@ Windows (PowerShell):
 
 **Ankit Thakur**\
 Data sources: USGS Earthquake Catalog and Google Gemini API.
-
-## License
-
-This project is intended for research and educational use.
