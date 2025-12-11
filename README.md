@@ -1,94 +1,105 @@
 # Earthquake vs Global News Sentiment Dashboard
 
-This Streamlit application visualizes the relationship between **global
-earthquake activity** and **global news sentiment** by combining
-real-time USGS earthquake data with synthetic sentiment generated using
-the **Google Gemini API**.
+This project presents a professional analytical dashboard built with
+Streamlit to investigate possible relationships between global
+earthquake activity and global news sentiment trends. It integrates real
+seismic data from the USGS Earthquake Catalog with synthetic sentiment
+data generated using the Google Gemini API. The dashboard provides
+correlation analysis, rolling averages, volatility visualization,
+heatmaps, and configurable user controls.
 
-------------------------------------------------------------------------
+## Overview
 
-## 🚀 Features
+The dashboard performs the following core operations:
 
-### **1. Real Earthquake Data (USGS API)**
+1.  Fetches real earthquake event data for user-selected time ranges.
+2.  Generates a statistically realistic sentiment time series using the
+    Gemini model.
+3.  Merges both datasets on a daily basis for comparative analysis.
+4.  Computes correlations and rolling averages.
+5.  Renders interactive visualizations for exploratory evaluation.
 
--   Fetches quake data for the last 7--90 days.
--   Configurable minimum magnitude (2.5 to 5.0).
--   Aggregated daily:
-    -   Earthquake Count
-    -   Maximum Magnitude
+## Features
 
-### **2. AI‑Generated Global News Sentiment (Gemini)**
+### Real Earthquake Data (USGS)
 
--   Uses Gemini 2.5 Flash to generate realistic sentiment values between
-    -1 and +1.
--   Includes spikes and dips representing important events.
--   Returned strictly as JSON for clean parsing.
+-   Retrieves earthquake data from the USGS Earthquake API.
+-   Configurable date range (7--90 days).
+-   Minimum magnitude filter (2.5 to 5.0).
+-   Produces daily aggregates:
+    -   Earthquake count
+    -   Maximum magnitude
 
-### **3. Data Processing**
+### Synthetic Global Sentiment (Gemini)
 
--   Datasets merge on **Date**.
--   Computes **7‑day rolling average** of earthquake counts.
--   Calculates **Pearson correlation** between quakes and sentiment.
+-   Uses Gemini 2.5 Flash to generate daily sentiment scores.
+-   Sentiment range: -1.0 to +1.0.
+-   Includes realistic positive and negative fluctuations.
+-   Delivered strictly as JSON for predictable parsing.
 
-### **4. Visualizations**
+### Data Processing and Analysis
 
--   📈 **Dual‑axis Line Chart** (quakes + sentiment)
--   🕯 **Candlestick Sentiment Volatility Chart**
--   🔥 **Earthquake Heatmap** (calendar-style weekly distribution)
--   🧮 **Raw data preview table**
+-   Merges daily seismic and sentiment datasets by date.
+-   Computes a 7-day rolling average of earthquake frequency.
+-   Calculates Pearson correlation to identify linear relationships.
+-   Handles missing or inconsistent values gracefully.
 
-------------------------------------------------------------------------
+### Visualizations
 
-## 🧩 How It Works
+-   Dual-axis time series chart displaying earthquake counts, rolling
+    averages, and sentiment scores.
+-   Candlestick chart illustrating daily sentiment volatility.
+-   Heatmap showing weekly earthquake distribution patterns.
+-   Tabular view of merged and cleaned data.
 
-1.  **USGS fetch** → pulls earthquake events.
-2.  **Gemini generation** → produces synthetic sentiment series.
-3.  **Merge data** → aligns both datasets by date.
-4.  **Visualize** → interactive charts powered by Plotly.
-5.  **Customize** → users adjust time range + magnitude in sidebar.
+## Technology Stack
 
-------------------------------------------------------------------------
+-   Python\
+-   Streamlit\
+-   Pandas\
+-   Plotly\
+-   Requests\
+-   Google Gemini API
 
-## 📦 Technologies Used
+## Project Structure
 
--   **Python**
--   **Streamlit**
--   **Pandas**
--   **Plotly**
--   **Google Gemini API**
--   **USGS Earthquake Catalog API**
+    app.py          # Main Streamlit dashboard script
 
-------------------------------------------------------------------------
+## Installation and Setup
 
-## 📁 Project Structure
+### 1. Install required packages
 
-    app.py          # Main Streamlit dashboard
+    pip install streamlit pandas plotly requests google-genai
 
-------------------------------------------------------------------------
+### 2. Configure your Gemini API key
 
-## ▶ Running the App
-
-### 1. Install Dependencies
-
-    pip install streamlit pandas plotly google-genai requests
-
-### 2. Set Your Gemini API Key
+macOS/Linux:
 
     export GEMINI_API_KEY="your_key_here"
 
-### 3. Run Streamlit App
+Windows (PowerShell):
+
+    setx GEMINI_API_KEY "your_key_here"
+
+### 3. Launch the application
 
     streamlit run app.py
 
-------------------------------------------------------------------------
+## Usage Instructions
 
-## 👨‍💻 Creator
+1.  Start the Streamlit app and open the provided local URL.
+2.  Adjust the sidebar controls:
+    -   Date range
+    -   Minimum earthquake magnitude
+3.  Explore the time-series charts, sentiment volatility view, and
+    earthquake heatmap.
+4.  Review the correlation coefficient and raw data table.
+
+## Author
 
 **Ankit Thakur**\
-Data sources: **USGS** & **Google Gemini API**
+Data sources: USGS Earthquake Catalog and Google Gemini API.
 
-------------------------------------------------------------------------
+## License
 
-## 📜 License
-
-This project is for educational and research purposes.
+This project is intended for research and educational use.
