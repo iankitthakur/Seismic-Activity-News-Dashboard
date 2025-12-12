@@ -51,14 +51,17 @@ The dashboard performs the following core operations:
 -   Candlestick chart illustrating daily sentiment volatility.
 -   Heatmap showing weekly earthquake distribution patterns.
 -   Tabular view of merged and cleaned data.
+-   <img width="1871" height="847" alt="Screenshot 2025-12-12 170317" src="https://github.com/user-attachments/assets/e1689d11-67a9-45d1-b236-5ba29aed8d77" />
+-   <img width="1883" height="876" alt="Screenshot 2025-12-12 170551" src="https://github.com/user-attachments/assets/cb4ac7eb-bcf3-48b7-b4ab-555803f3e2e9" />
+-   <img width="1877" height="836" alt="Screenshot 2025-12-12 170627" src="https://github.com/user-attachments/assets/a190162c-323b-43a4-ace3-fd64dd49c4bc" />
 
 ## Technology Stack
 
--   Python\
--   Streamlit\
--   Pandas\
--   Plotly\
--   Requests\
+-   Python
+-   Streamlit
+-   Pandas
+-   Plotly
+-   Requests
 -   Google Gemini API
 
 ## Project Structure
